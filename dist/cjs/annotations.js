@@ -1,6 +1,80 @@
 "use strict";
-var $__util__;
-var isFunction = ($__util__ = require("./util"), $__util__ && $__util__.__esModule && $__util__ || {default: $__util__}).isFunction;
+Object.defineProperties(module.exports, {
+  __esModule: {value: true},
+  annotate: {
+    enumerable: true,
+    get: function() {
+      return annotate;
+    }
+  },
+  hasAnnotation: {
+    enumerable: true,
+    get: function() {
+      return hasAnnotation;
+    }
+  },
+  readAnnotations: {
+    enumerable: true,
+    get: function() {
+      return readAnnotations;
+    }
+  },
+  SuperConstructor: {
+    enumerable: true,
+    get: function() {
+      return SuperConstructor;
+    }
+  },
+  TransientScope: {
+    enumerable: true,
+    get: function() {
+      return TransientScope;
+    }
+  },
+  Inject: {
+    enumerable: true,
+    get: function() {
+      return Inject;
+    }
+  },
+  InjectPromise: {
+    enumerable: true,
+    get: function() {
+      return InjectPromise;
+    }
+  },
+  InjectLazy: {
+    enumerable: true,
+    get: function() {
+      return InjectLazy;
+    }
+  },
+  Provide: {
+    enumerable: true,
+    get: function() {
+      return Provide;
+    }
+  },
+  ProvidePromise: {
+    enumerable: true,
+    get: function() {
+      return ProvidePromise;
+    }
+  },
+  ClassProvider: {
+    enumerable: true,
+    get: function() {
+      return ClassProvider;
+    }
+  },
+  FactoryProvider: {
+    enumerable: true,
+    get: function() {
+      return FactoryProvider;
+    }
+  }
+});
+var isFunction = require("./util").isFunction;
 var SuperConstructor = function() {
   function SuperConstructor() {}
   return ($traceurRuntime.createClass)(SuperConstructor, {}, {});
@@ -194,42 +268,3 @@ function readAnnotations(fn) {
   }
   return collectedAnnotations;
 }
-Object.defineProperties(module.exports, {
-  annotate: {get: function() {
-      return annotate;
-    }},
-  hasAnnotation: {get: function() {
-      return hasAnnotation;
-    }},
-  readAnnotations: {get: function() {
-      return readAnnotations;
-    }},
-  SuperConstructor: {get: function() {
-      return SuperConstructor;
-    }},
-  TransientScope: {get: function() {
-      return TransientScope;
-    }},
-  Inject: {get: function() {
-      return Inject;
-    }},
-  InjectPromise: {get: function() {
-      return InjectPromise;
-    }},
-  InjectLazy: {get: function() {
-      return InjectLazy;
-    }},
-  Provide: {get: function() {
-      return Provide;
-    }},
-  ProvidePromise: {get: function() {
-      return ProvidePromise;
-    }},
-  ClassProvider: {get: function() {
-      return ClassProvider;
-    }},
-  FactoryProvider: {get: function() {
-      return FactoryProvider;
-    }},
-  __esModule: {value: true}
-});

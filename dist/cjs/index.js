@@ -1,41 +1,72 @@
 "use strict";
-var $__injector__,
-    $__annotations__;
-var $__injector__ = ($__injector__ = require("./injector"), $__injector__ && $__injector__.__esModule && $__injector__ || {default: $__injector__});
-var $__annotations__ = ($__annotations__ = require("./annotations"), $__annotations__ && $__annotations__.__esModule && $__annotations__ || {default: $__annotations__});
+var $__injector__ = require("./injector");
+var $__annotations__ = require("./annotations");
 Object.defineProperties(module.exports, {
-  Injector: {get: function() {
+  __esModule: {value: true},
+  Injector: {
+    enumerable: true,
+    get: function() {
       return $__injector__.Injector;
-    }},
-  annotate: {get: function() {
+    }
+  },
+  annotate: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.annotate;
-    }},
-  Inject: {get: function() {
+    }
+  },
+  Inject: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.Inject;
-    }},
-  InjectLazy: {get: function() {
+    }
+  },
+  InjectLazy: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.InjectLazy;
-    }},
-  InjectPromise: {get: function() {
+    }
+  },
+  InjectPromise: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.InjectPromise;
-    }},
-  Provide: {get: function() {
+    }
+  },
+  Provide: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.Provide;
-    }},
-  ProvidePromise: {get: function() {
+    }
+  },
+  ProvidePromise: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.ProvidePromise;
-    }},
-  SuperConstructor: {get: function() {
+    }
+  },
+  SuperConstructor: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.SuperConstructor;
-    }},
-  TransientScope: {get: function() {
+    }
+  },
+  TransientScope: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.TransientScope;
-    }},
-  ClassProvider: {get: function() {
+    }
+  },
+  ClassProvider: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.ClassProvider;
-    }},
-  FactoryProvider: {get: function() {
+    }
+  },
+  FactoryProvider: {
+    enumerable: true,
+    get: function() {
       return $__annotations__.FactoryProvider;
-    }},
-  __esModule: {value: true}
+    }
+  }
 });

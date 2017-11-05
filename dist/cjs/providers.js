@@ -1,13 +1,20 @@
 "use strict";
-var $__annotations__,
-    $__util__;
-var $__9 = ($__annotations__ = require("./annotations"), $__annotations__ && $__annotations__.__esModule && $__annotations__ || {default: $__annotations__}),
+Object.defineProperties(module.exports, {
+  __esModule: {value: true},
+  createProviderFromFnOrClass: {
+    enumerable: true,
+    get: function() {
+      return createProviderFromFnOrClass;
+    }
+  }
+});
+var $__9 = require("./annotations"),
     ClassProviderAnnotation = $__9.ClassProvider,
     FactoryProviderAnnotation = $__9.FactoryProvider,
     SuperConstructorAnnotation = $__9.SuperConstructor,
     readAnnotations = $__9.readAnnotations,
     hasAnnotation = $__9.hasAnnotation;
-var $__10 = ($__util__ = require("./util"), $__util__ && $__util__.__esModule && $__util__ || {default: $__util__}),
+var $__10 = require("./util"),
     isFunction = $__10.isFunction,
     isObject = $__10.isObject,
     toString = $__10.toString,
@@ -85,6 +92,9 @@ var ClassProvider = function() {
         argsForCurrentConstructor = allArguments.slice(constructorInfo[1], constructorInfo[2] + 1);
       }
       return function InjectedAndBoundSuperConstructor() {
+        if (/^\s*class\s+/.test(constructorInfo[0].toString())) {
+          return new (Function.prototype.bind.apply(constructorInfo[0], $traceurRuntime.spread([null], argsForCurrentConstructor)))();
+        }
         return constructorInfo[0].apply(context, argsForCurrentConstructor);
       };
     },
@@ -142,9 +152,3 @@ function createProviderFromFnOrClass(fnOrClass, annotations) {
   }
   return new FactoryProvider(fnOrClass, annotations.params, annotations.provide.isPromise);
 }
-Object.defineProperties(module.exports, {
-  createProviderFromFnOrClass: {get: function() {
-      return createProviderFromFnOrClass;
-    }},
-  __esModule: {value: true}
-});

@@ -1,15 +1,26 @@
 "use strict";
-var $__injector__,
-    $__annotations__,
-    $__util__,
-    $__providers__;
-var Injector = ($__injector__ = require("./injector"), $__injector__ && $__injector__.__esModule && $__injector__ || {default: $__injector__}).Injector;
-var $__3 = ($__annotations__ = require("./annotations"), $__annotations__ && $__annotations__.__esModule && $__annotations__ || {default: $__annotations__}),
+Object.defineProperties(module.exports, {
+  __esModule: {value: true},
+  use: {
+    enumerable: true,
+    get: function() {
+      return use;
+    }
+  },
+  inject: {
+    enumerable: true,
+    get: function() {
+      return inject;
+    }
+  }
+});
+var Injector = require("./injector").Injector;
+var $__3 = require("./annotations"),
     Inject = $__3.Inject,
     annotate = $__3.annotate,
     readAnnotations = $__3.readAnnotations;
-var isFunction = ($__util__ = require("./util"), $__util__ && $__util__.__esModule && $__util__ || {default: $__util__}).isFunction;
-var createProviderFromFnOrClass = ($__providers__ = require("./providers"), $__providers__ && $__providers__.__esModule && $__providers__ || {default: $__providers__}).createProviderFromFnOrClass;
+var isFunction = require("./util").isFunction;
+var createProviderFromFnOrClass = require("./providers").createProviderFromFnOrClass;
 var currentSpec = null;
 beforeEach(function() {
   currentSpec = this;
@@ -83,12 +94,3 @@ function inject() {
   };
   return isRunning() ? run() : run;
 }
-Object.defineProperties(module.exports, {
-  use: {get: function() {
-      return use;
-    }},
-  inject: {get: function() {
-      return inject;
-    }},
-  __esModule: {value: true}
-});

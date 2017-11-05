@@ -1,6 +1,14 @@
 "use strict";
-var $__util__;
-var toString = ($__util__ = require("./util"), $__util__ && $__util__.__esModule && $__util__ || {default: $__util__}).toString;
+Object.defineProperties(module.exports, {
+  __esModule: {value: true},
+  profileInjector: {
+    enumerable: true,
+    get: function() {
+      return profileInjector;
+    }
+  }
+});
+var toString = require("./util").toString;
 var IS_DEBUG = false;
 var _global = null;
 if ((typeof process === 'undefined' ? 'undefined' : $traceurRuntime.typeof(process)) === 'object' && process.env) {
@@ -65,9 +73,3 @@ function profileInjector(injector, Injector) {
   }
   _global.__di_dump__.injectors.push(serializeInjector(injector, _global.__di_dump__.tokens, Injector));
 }
-Object.defineProperties(module.exports, {
-  profileInjector: {get: function() {
-      return profileInjector;
-    }},
-  __esModule: {value: true}
-});
