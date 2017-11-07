@@ -1,20 +1,13 @@
 "use strict";
-Object.defineProperties(module.exports, {
-  __esModule: {value: true},
-  createProviderFromFnOrClass: {
-    enumerable: true,
-    get: function() {
-      return createProviderFromFnOrClass;
-    }
-  }
-});
-var $__9 = require("./annotations"),
+var $__annotations__,
+    $__util__;
+var $__9 = ($__annotations__ = require("./annotations"), $__annotations__ && $__annotations__.__esModule && $__annotations__ || {default: $__annotations__}),
     ClassProviderAnnotation = $__9.ClassProvider,
     FactoryProviderAnnotation = $__9.FactoryProvider,
     SuperConstructorAnnotation = $__9.SuperConstructor,
     readAnnotations = $__9.readAnnotations,
     hasAnnotation = $__9.hasAnnotation;
-var $__10 = require("./util"),
+var $__10 = ($__util__ = require("./util"), $__util__ && $__util__.__esModule && $__util__ || {default: $__util__}),
     isFunction = $__10.isFunction,
     isObject = $__10.isObject,
     toString = $__10.toString,
@@ -152,3 +145,9 @@ function createProviderFromFnOrClass(fnOrClass, annotations) {
   }
   return new FactoryProvider(fnOrClass, annotations.params, annotations.provide.isPromise);
 }
+Object.defineProperties(module.exports, {
+  createProviderFromFnOrClass: {get: function() {
+      return createProviderFromFnOrClass;
+    }},
+  __esModule: {value: true}
+});

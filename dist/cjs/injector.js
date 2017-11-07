@@ -1,24 +1,19 @@
 "use strict";
-Object.defineProperties(module.exports, {
-  __esModule: {value: true},
-  Injector: {
-    enumerable: true,
-    get: function() {
-      return Injector;
-    }
-  }
-});
-var $__9 = require("./annotations"),
+var $__annotations__,
+    $__util__,
+    $__profiler__,
+    $__providers__;
+var $__9 = ($__annotations__ = require("./annotations"), $__annotations__ && $__annotations__.__esModule && $__annotations__ || {default: $__annotations__}),
     annotate = $__9.annotate,
     readAnnotations = $__9.readAnnotations,
     hasAnnotation = $__9.hasAnnotation,
     ProvideAnnotation = $__9.Provide,
     TransientScopeAnnotation = $__9.TransientScope;
-var $__10 = require("./util"),
+var $__10 = ($__util__ = require("./util"), $__util__ && $__util__.__esModule && $__util__ || {default: $__util__}),
     isFunction = $__10.isFunction,
     toString = $__10.toString;
-var profileInjector = require("./profiler").profileInjector;
-var createProviderFromFnOrClass = require("./providers").createProviderFromFnOrClass;
+var profileInjector = ($__profiler__ = require("./profiler"), $__profiler__ && $__profiler__.__esModule && $__profiler__ || {default: $__profiler__}).profileInjector;
+var createProviderFromFnOrClass = ($__providers__ = require("./providers"), $__providers__ && $__providers__.__esModule && $__providers__ || {default: $__providers__}).createProviderFromFnOrClass;
 function constructResolvingMessage(resolving, token) {
   if (arguments.length > 1) {
     resolving.push(token);
@@ -286,3 +281,9 @@ var Injector = function() {
     }
   }, {});
 }();
+Object.defineProperties(module.exports, {
+  Injector: {get: function() {
+      return Injector;
+    }},
+  __esModule: {value: true}
+});
