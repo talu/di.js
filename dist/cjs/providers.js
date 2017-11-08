@@ -85,6 +85,9 @@ var ClassProvider = function() {
         argsForCurrentConstructor = allArguments.slice(constructorInfo[1], constructorInfo[2] + 1);
       }
       return function InjectedAndBoundSuperConstructor() {
+        if (/^\s*class\s+/.test(constructorInfo[0].toString())) {
+          return new (Function.prototype.bind.apply(constructorInfo[0], $traceurRuntime.spread([null], argsForCurrentConstructor)))();
+        }
         return constructorInfo[0].apply(context, argsForCurrentConstructor);
       };
     },

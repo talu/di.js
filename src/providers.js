@@ -107,7 +107,11 @@ class ClassProvider {
 
     return function InjectedAndBoundSuperConstructor() {
       // TODO(vojta): throw if arguments given
-      return constructorInfo[0].apply(context, argsForCurrentConstructor);
+      if(/^\s*class\s+/.test(constructorInfo[0].toString())) {
+          return new constructorInfo[0](...argsForCurrentConstructor);
+      }
+      return constructorInfo[0].apply(context, argsForCurrentConstructor); 
+      // return new constructorInfo[0](...argsForCurrentConstructor);
     };
   }
 
