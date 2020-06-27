@@ -1,5 +1,5 @@
 {
-  "name": "di",
+  "name": "@meltmedia/di",
   "version": "2.0.0-pre-14",
   "description": "A DI framework.",
   "main": "node/index.js",
@@ -7,6 +7,10 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/angular/di.js.git"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
   },
   "bugs": {
     "url": "https://github.com/angular/di.js/issues"
