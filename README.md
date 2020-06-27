@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/angular/di.js.png?branch=master)](https://travis-ci.org/angular/di.js)
 
+# NOTE
+This project is no longer maintained, but still requird by the various RAMP projects. A single release has been published to our private npm repository under @meltmedia/di.
+
 ## Dependency Injection v2
 
 This readme describes how to set up your working space in order to run the tests and hack on it. See [How can I use it](./docs/how-can-i-use-it.md) on how to use this DI framework in your project.
